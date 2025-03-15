@@ -1,5 +1,10 @@
-import { getJestProjects } from "@nx/jest";
-
 export default {
-  projects: getJestProjects(),
+  displayName: "server",
+  preset: "../../jest.preset.js",
+  testEnvironment: "node",
+  transform: {
+    "^.+\\.[tj]s$": ["ts-jest", { tsconfig: "<rootDir>/tsconfig.spec.json" }],
+  },
+  moduleFileExtensions: ["ts", "js", "html"],
+  coverageDirectory: "../../coverage/apps/server",
 };
